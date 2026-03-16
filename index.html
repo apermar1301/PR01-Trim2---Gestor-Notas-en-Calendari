@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/storage.js" defer></script>
+  <script src="js/app_index.js" defer></script>
+  <title>Calendario de Notas</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="resource/locoIco.png" type="image/x-icon">
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <div class="logo"><img src="resource/logoMain.png" alt="LOGAZO"></div>
+    
+
+    <div class="acciones-globales">
+      <button id="btn-listar" class="btn-primario">Listar todas las notas</button>
+      <button id="btn-limpiar" class="btn-peligro">Limpiar calendario</button>
+    </div>
+
+    
+    <div id="cuadricula-meses"></div>
+
+    
+    <section id="panel-listado" class="oculto">
+      <h2>Todas las notas</h2>
+      <ul id="lista-todas-notas"></ul>
+    </section>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+/*Aquí se utilizan variables para no repetir códigos */
+/*Paleta pedida a chati (No tengo gusto ninguno para estas cosas)*/
+:root {
+  --color-fondo: #f5f5f5;
+  --color-fondo-tarjeta: #ffffff;
+  --color-primario: #3a7bd5;
+  --color-primario-hover: #2f63b0;
+  --color-peligro: #d9534f;
+  --color-peligro-hover: #c9302c;
+  --color-texto: #222222;
+  --color-texto-suave: #666666;
+  --color-borde: #dddddd;
+  --color-mes-destacado: #3a7bd5;
+  --color-mes-apagado: #cccccc;
+  --color-error: #d9534f;
+  --radio-borde: 6px;
+  --sombra: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    width: 400px;
+}
+
+h1{
+    text-align: center;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: var(--radio-borde);
+  padding: 0.4rem 0.9rem;
+}
+
+input, textarea {
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--color-primario);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.oculto {
+  display: none !important; /*No me dejaba ocultar por eso el !important*/
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.destacado {
+  background-color: var(--color-mes-destacado);
+  color: #ffffff;
+}
+
+.apagado {
+  background-color: var(--color-mes-apagado);
+  color: var(--color-texto-suave);
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.btn-peligro {
+  background-color: var(--color-peligro);
+  color: #ffffff;
+}
+
+.btn-peligro:hover {
+  background-color: var(--color-peligro-hover);
+}
+
+.btn-neutro {
+  background-color: #e0e0e0;
+  color: var(--color-texto);
+}
+
+.btn-neutro:hover {
+  background-color: #cccccc;
+}
+
+.contenedor {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.acciones-globales {
+
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 7.5rem;
+
+}
+
+
+#cuadricula-meses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /*Aquí podemos cambiar la distribucion de las columnas*/
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tarjeta-mes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: var(--sombra);
+  min-height: 80px;
+}
+
+.tarjeta-mes:hover {
+  opacity: 0.85;
+}
+
+.nombre-mes {
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+}
+
+.contador-mes {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+
+#panel-listado {
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 1.25rem;
+  box-shadow: var(--sombra);
+}
+
+#panel-listado h2 {
+  margin-bottom: 1rem;
+}
+
+.item-nota-global {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.item-nota-global:last-child {
+  border-bottom: none;
+}
+
+.etiqueta-mes {
+  font-size: 0.8rem;
+  background-color: var(--color-mes-destacado);
+  color: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.titulo-nota {
+  font-size: 0.95rem;
+}
+
+.sin-notas {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+/* =========================================
+   MES — CABECERA
+   ========================================= */
+
+.cabecera-mes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cabecera-mes h1 {
+  margin-bottom: 0;
+}
+
+.btn-volver {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radio-borde);
+  font-size: 0.9rem;
+}
+
+
+.seccion-formulario {
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra);
+}
+
+.seccion-formulario h2 {
+  margin-bottom: 1rem;
+}
+
+.campo-formulario {
+  margin-bottom: 1rem;
+}
+
+.campo-formulario label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.acciones-formulario {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+
+.seccion-notas h2 {
+  margin-bottom: 1rem;
+}
+
+.tarjeta-nota {
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  box-shadow: var(--sombra);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contenido-nota {
+  flex: 1;
+}
+
+.contenido-nota h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.contenido-nota p {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+.acciones-nota {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}

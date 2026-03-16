@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/storage.js" defer></script>
+  <script src="js/app_mes.js" defer></script>
+  <title>Notas del mes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="contenedor">
+
+    
+    <div class="cabecera-mes">
+      <h1 id="titulo-mes">Notas de ...</h1>
+      <a href="index.html" class="btn-neutro btn-volver">← Volver al calendario</a>
+    </div>
+
+    
+    <section class="seccion-formulario">
+      <h2 id="titulo-formulario">Nueva nota</h2>
+
+      <div class="campo-formulario">
+        <label for="input-titulo">Título</label>
+        <input type="text" id="input-titulo" placeholder="Título de la nota">
+        <p class="error oculto" id="error-titulo">El título no puede estar vacío.</p>
+      </div>
+
+      <div class="campo-formulario">
+        <label for="input-descripcion">Descripción</label>
+        <textarea id="input-descripcion" rows="3" placeholder="Descripción de la nota"></textarea>
+        <p class="error oculto" id="error-descripcion">La descripción no puede estar vacía.</p>
+      </div>
+
+      
+      <input type="hidden" id="input-id">
+
+      <div class="acciones-formulario">
+        <button id="btn-guardar" class="btn-primario">Guardar nota</button>
+        <button id="btn-cancelar" class="btn-neutro oculto">Cancelar</button>
+      </div>
+    </section>
+
+    <section class="seccion-notas">
+      <h2>Notas guardadas</h2>
+      <ul id="lista-notas"></ul>
+    </section>
+
+  </div>
+
+</body>
+</html>
