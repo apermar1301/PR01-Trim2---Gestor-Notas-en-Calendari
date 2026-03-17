@@ -7,7 +7,7 @@ const NOMBRES_MESES = [
 
 
 function renderizarMeses() {
-  const contenedor = document.getElementById("cuadricula-meses");
+  const contenedor = document.querySelector("#cuadricula-meses");
   const notas = obtenerNotas();
   contenedor.innerHTML = "";
 
@@ -40,8 +40,8 @@ function renderizarMeses() {
 
 
 function toggleListadoGlobal() {
-  const panel = document.getElementById("panel-listado");
-  const lista = document.getElementById("lista-todas-notas");
+  const panel = document.querySelector("#panel-listado");
+  const lista = document.querySelector("#lista-todas-notas");
   const notas = obtenerNotas();
 
   if (!panel.classList.contains("oculto")) {
@@ -84,11 +84,11 @@ function limpiarCalendario() {
   if (!confirmado) return;
 
   limpiarNotas();
-  document.getElementById("panel-listado").classList.add("oculto");
+  document.querySelector("#panel-listado").classList.add("oculto");
   renderizarMeses();
 }
 
-document.getElementById("btn-listar").addEventListener("click", toggleListadoGlobal);
-document.getElementById("btn-limpiar").addEventListener("click", limpiarCalendario);
+document.querySelector("#btn-listar").addEventListener("click", toggleListadoGlobal);
+document.querySelector("#btn-limpiar").addEventListener("click", limpiarCalendario);
 
 renderizarMeses();

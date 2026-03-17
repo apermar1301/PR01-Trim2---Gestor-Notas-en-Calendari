@@ -216,22 +216,22 @@ function eliminarNota(id) {
  * Resetea el formulario al estado inicial (modo creación).
  */
 function limpiarFormulario() {
-  document.getElementById("input-titulo").value = "";
-  document.getElementById("input-descripcion").value = "";
-  document.getElementById("input-id").value = "";
-  document.getElementById("error-titulo").classList.add("oculto");
-  document.getElementById("error-descripcion").classList.add("oculto");
-  document.getElementById("titulo-formulario").textContent = "Nueva nota";
-  document.getElementById("btn-guardar").textContent = "Guardar nota";
-  document.getElementById("btn-cancelar").classList.add("oculto");
+  document.querySelector("#input-titulo").value = "";
+  document.querySelector("#input-descripcion").value = "";
+  document.querySelector("#input-id").value = "";
+  document.querySelector("#error-titulo").classList.add("oculto");
+  document.querySelector("#error-descripcion").classList.add("oculto");
+  document.querySelector("#titulo-formulario").textContent = "Nueva nota";
+  document.querySelector("#btn-guardar").textContent = "Guardar nota";
+  document.querySelector("#btn-cancelar").classList.add("oculto");
 }
 
 // =========================================
 // EVENTOS
 // =========================================
 
-document.getElementById("btn-guardar").addEventListener("click", guardarNota);
-document.getElementById("btn-cancelar").addEventListener("click", limpiarFormulario);
+document.querySelector("#btn-guardar").addEventListener("click", guardarNota);
+document.querySelector("#btn-cancelar").addEventListener("click", limpiarFormulario);
 
 // =========================================
 // INICIO
